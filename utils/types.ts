@@ -1,4 +1,4 @@
-import {BundleTag, FeedTag, User} from '@prisma/client'
+import {BundleTag, FeedTag, User, Feed} from '@prisma/client'
 
 export enum ItemType {
     BundleType = 'BundleType',
@@ -23,4 +23,11 @@ export type BundleObject = {
     feeds: FeedObject[]
     author?: User
     likes?: User[]
+}
+
+export type SelectedFeedState = {
+    id: string
+    feeds: Feed[]
+    editMode: Boolean
+    newMode: Boolean
 }
